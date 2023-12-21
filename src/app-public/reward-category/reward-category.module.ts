@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { RewardCategory } from '../../entities/reward-category.entity';
+import { RewardCategory } from 'src/entities/reward-category.entity';
 import { RewardCategoryController } from './reward-category.controller';
 import { RewardCategoryService } from './reward-category.service';
 
