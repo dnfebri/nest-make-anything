@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { RewardCategoryService } from './reward-category.service';
-import { RewardCategory } from 'src/entities/reward-category.entity';
+import { RewardCategory } from '../../entities/reward-category.entity';
 import { CreateRewardCategoryDto } from './dto/crete-rewardCategory.dto';
 
 @Controller({ path: 'reward-category', version: '1' })

@@ -21,6 +21,6 @@ describe('AppController', () => {
   });
 
   it('Get App Api Info Web API', () => {
-    expect(appController.getHello()).toEqual({ name: 'Web API' });
+    expect(appController.getInfo()).toEqual({ name: 'Web API' });
   });
 });

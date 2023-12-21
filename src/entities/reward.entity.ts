@@ -1,4 +1,4 @@
-import { EntityHelper } from 'src/shared/utils/entity-helper';
+import { EntityHelper } from '../shared/utils/entity-helper';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { RewardCategory } from './reward-category.entity';
 

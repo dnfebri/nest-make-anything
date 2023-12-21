@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { RewardCategory } from 'src/entities/reward-category.entity';
+import { RewardCategory } from '../../entities/reward-category.entity';
 import { Repository } from 'typeorm';
 import { CreateRewardCategoryDto } from './dto/crete-rewardCategory.dto';
 
