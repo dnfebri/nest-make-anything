@@ -11,8 +11,9 @@ export class RewardCategoryService {
     private rewardCategoryRepository: Repository<RewardCategory>,
   ) {}
 
-  async findMany(): Promise<RewardCategory[]> {
-    return await this.rewardCategoryRepository.find();
+  async findMany(): Promise<[RewardCategory[], number]> {
+    const [data, count] = await this.rewardCategoryRepository.findAndCount();
+    return [data, count];
   }
 
   async create(data: CreateRewardCategoryDto): Promise<RewardCategory> {
