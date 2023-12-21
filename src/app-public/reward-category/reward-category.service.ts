@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RewardCategory } from 'src/entities/reward-category.entity';
 import { Repository } from 'typeorm';
+import { CreateRewardCategoryDto } from './dto/crete-rewardCategory.dto';
 
 @Injectable()
 export class RewardCategoryService {
@@ -12,5 +13,11 @@ export class RewardCategoryService {
 
   async findMany(): Promise<RewardCategory[]> {
     return await this.rewardCategoryRepository.find();
+  }
+
+  async create(data: CreateRewardCategoryDto): Promise<RewardCategory> {
+    return await this.rewardCategoryRepository.save(
+      this.rewardCategoryRepository.create(data),
+    );
   }
 }
