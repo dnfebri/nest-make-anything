@@ -52,5 +52,6 @@ export default registerAs<AppConfig>('app', () => {
       : process.env.PORT
       ? parseInt(process.env.PORT, 10)
       : 9000,
+    apiPrefix: process.env.API_PREFIX || 'api',
   };
 });

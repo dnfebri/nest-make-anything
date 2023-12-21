@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
-import { AllConfigType } from 'src/shared/config/config.type';
+import { AllConfigType } from 'src/types/config/config.type';
 import { SnakeNamingStrategy } from './snake-naming-strategy';
 
 @Injectable()
