@@ -10,6 +10,9 @@ export class RewardCategory extends EntityHelper {
   @Column()
   name: string;
 
-  @OneToMany(() => Reward, (Reward) => Reward.category)
+  @OneToMany(() => Reward, (Reward) => Reward.category, {
+    onDelete: 'CASCADE',
+    nullable: false,
+  })
   reward: Reward[];
 }

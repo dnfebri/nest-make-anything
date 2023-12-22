@@ -4,6 +4,7 @@ import {
   Get,
   HttpCode,
   HttpStatus,
+  Param,
   Post,
   Query,
 } from '@nestjs/common';
@@ -13,6 +14,7 @@ import { CreateRewardCategoryDto } from './dto/crete-rewardCategory.dto';
 import { PaginationResultType } from 'src/types/pagination-result.type';
 import { customPagination } from 'src/utils/pagination';
 import { OkTransform, TOkResponse } from 'src/utils/ok-response';
+import { NullableType } from 'src/types/nullable.type';
 
 @Controller({ path: 'reward-category', version: '1' })
 export class RewardCategoryController {
@@ -39,5 +41,12 @@ export class RewardCategoryController {
       'Category created successfully',
       HttpStatus.CREATED,
     );
+  }
+
+  @Get(':id')
+  async findById(
+    @Param('id') id: string,
+  ): Promise<NullableType<RewardCategory>> {
+    return await this.rewardCategoryService.findById(id);
   }
 }

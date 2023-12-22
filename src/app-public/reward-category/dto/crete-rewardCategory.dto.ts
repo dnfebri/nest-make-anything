@@ -4,3 +4,8 @@ export class CreateRewardCategoryDto {
   @IsNotEmpty()
   name: string;
 }
+
+export class RewardCategoryDtoById {
+  @IsNotEmpty()
+  id: string;
+}
