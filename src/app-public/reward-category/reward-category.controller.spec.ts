@@ -12,7 +12,9 @@ describe('RewardCategoryController', () => {
       provide: RewardCategoryService,
       useFactory: () => ({
         create: jest.fn(() => []),
-        findById: jest.fn(() => []),
+        findById: jest.fn(() => {
+          return { data: 'Result' };
+        }),
       }),
     };
     const module: TestingModule = await Test.createTestingModule({
@@ -37,13 +39,15 @@ describe('RewardCategoryController', () => {
 
   it('should calling create reward category method', async () => {
     const dto = new CreateRewardCategoryDto();
-    rewardCtController.createCategory(dto);
+    const result = await rewardCtController.createCategory(dto);
+    console.log(result);
     expect(rewardCtService.create).toHaveBeenCalled();
     expect(rewardCtService.create).toHaveBeenCalledWith(dto);
   });
 
   it('should calling find by id reward category method', async () => {
-    rewardCtController.findById('1');
+    const result = await rewardCtController.findById('1');
+    console.log(result);
     expect(rewardCtService.findById).toHaveBeenCalledWith('1');
   });
 });
