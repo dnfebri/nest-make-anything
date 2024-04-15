@@ -4,6 +4,7 @@ import { AppModule } from './app/app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { AllConfigType } from './types/config/config.type';
 import { VersioningType } from '@nestjs/common';
+import { Swagger } from './swaggerModul';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -16,6 +17,9 @@ async function bootstrap() {
   app.enableVersioning({
     type: VersioningType.URI,
   });
+
+  Swagger(app);
+
   await app.listen(configService.getOrThrow('app.port', { infer: true }));
 }
 bootstrap();
