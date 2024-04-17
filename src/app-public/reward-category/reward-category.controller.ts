@@ -15,12 +15,15 @@ import { PaginationResultType } from 'src/types/pagination-result.type';
 import { customPagination } from 'src/utils/pagination';
 import { OkTransform, TOkResponse } from 'src/utils/ok-response';
 import { NullableType } from 'src/types/nullable.type';
+import { ApiQuery } from '@nestjs/swagger';
 
 @Controller({ path: 'reward-category', version: '1' })
 export class RewardCategoryController {
   constructor(private readonly rewardCategoryService: RewardCategoryService) {}
 
   @Get()
+  @ApiQuery({ name: 'page', required: false, example: 1 })
+  @ApiQuery({ name: 'limit', required: false, example: 10 })
   async findAll(
     @Query('page') page?: number,
     @Query('limit') limit?: number,
