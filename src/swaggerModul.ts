@@ -1,7 +1,14 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { RewardCategoryModule } from './app-public/reward-category/reward-category.module';
+import { AppPublicModule } from './app-public/module';
+import { AppCommonModule } from './app-common/module';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { IncomingMessage, Server, ServerResponse } from 'http';
 
-export const Swagger = (app: any) => {
+export const Swagger = (
+  app: NestExpressApplication<
+    Server<typeof IncomingMessage, typeof ServerResponse>
+  >,
+) => {
   SwaggerModule.setup(
     'docs/store',
     app,
@@ -14,7 +21,29 @@ export const Swagger = (app: any) => {
         .addBearerAuth()
         .build(),
       {
-        include: [RewardCategoryModule],
+        include: [...AppPublicModule],
+      },
+    ),
+    {
+      swaggerOptions: {
+        persistAuthorization: true,
+      },
+    },
+  );
+
+  SwaggerModule.setup(
+    'docs/common',
+    app,
+    SwaggerModule.createDocument(
+      app,
+      new DocumentBuilder()
+        .setTitle('API')
+        .setDescription('API docs')
+        .setVersion('1.0')
+        .addBearerAuth()
+        .build(),
+      {
+        include: [...AppCommonModule],
       },
     ),
     {

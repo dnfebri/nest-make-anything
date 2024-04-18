@@ -3,11 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import appConfig from 'src/shared/config/app.config';
-import { RewardCategoryModule } from 'src/app-public/reward-category/reward-category.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from 'src/database/typeorm-config.service';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import databaseConfig from 'src/shared/config/database.config';
+import { AppPublicModule } from 'src/app-public/module';
+import { AppCommonModule } from 'src/app-common/module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import databaseConfig from 'src/shared/config/database.config';
         return new DataSource(options).initialize();
       },
     }),
-    RewardCategoryModule,
+    ...AppPublicModule,
+    ...AppCommonModule,
   ],
   controllers: [AppController],
   providers: [AppService],
