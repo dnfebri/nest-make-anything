@@ -15,9 +15,9 @@ services:
       - BD_PASSWORD=postgres
       - DB_PORT=5432
     depends_on:
-      - db
-  db:
-    container_name: db
+      - dbpg
+  dbpg:
+    container_name: dbpg
     image: postgres:12
     ports:
       - 5432:5432
