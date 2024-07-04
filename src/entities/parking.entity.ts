@@ -1,4 +1,4 @@
-import { ParkingType } from 'src/enum/parking.enum';
+import { ParkingType } from 'src/enums/parking.enum';
 import { AuditTrail, EntityHelper } from 'src/shared/utils/entity-helper';
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
