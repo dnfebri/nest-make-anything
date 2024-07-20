@@ -10,7 +10,7 @@ export const Swagger = (
   >,
 ) => {
   SwaggerModule.setup(
-    'docs/store',
+    'docs/public',
     app,
     SwaggerModule.createDocument(
       app,
