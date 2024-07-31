@@ -30,8 +30,18 @@ export type AuthConfig = {
   otpExpires?: number;
 };
 
+export type CacheConfig = {
+  ttl: number;
+  max: number;
+  host: string;
+  port: number;
+  auth_pass: string;
+  db: number;
+};
+
 export type AllConfigType = {
   app: AppConfig;
   database: DatabaseConfig;
   auth: AuthConfig;
+  cache: CacheConfig;
 };

@@ -4,10 +4,12 @@ import { AuthAdminController } from './auth-admin.controller';
 import { AdminModule } from 'src/app-public/admin/admin.module';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { AppCacheModule } from 'src/core/cache/cache.module';
 
 @Module({
   imports: [
     AdminModule,
+    AppCacheModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
