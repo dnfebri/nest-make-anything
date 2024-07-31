@@ -39,6 +39,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^7.1.17",
     "@nestjs/typeorm": "^10.0.1",
+    "@types/bcrypt": "^5.0.2",
     "bcrypt": "^5.1.1",
     "cache-manager": "^5.7.1",
     "class-transformer": "^0.5.1",

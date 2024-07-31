@@ -13,7 +13,7 @@ import { AuthEmailLoginDto } from './dto/auth-email-login.dto';
 import { Admin } from 'src/entities/admin.entity';
 import { AuthAdminService } from './auth-admin.service';
 import { AuthAdminGuard } from 'src/shared/guards/auth.guard';
-import { OkTransform, TOkResponse } from 'src/utils/ok-response';
+import { OkTransform, TOkResponse } from 'src/shared/utils/ok-response';
 import { SessionUser } from 'src/shared/decorators/user.decorator';
 import { NullableType } from 'src/types/nullable.type';
 

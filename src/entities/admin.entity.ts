@@ -11,7 +11,7 @@ import {
   DeletedTrail,
   EntityHelper,
 } from 'src/shared/utils/entity-helper';
-import { make } from 'src/utils/hash';
+import { make } from 'src/shared/utils/hash';
 
 @Entity()
 export class Admin extends EntityHelper {

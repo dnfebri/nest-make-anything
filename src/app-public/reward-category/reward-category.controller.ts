@@ -12,8 +12,8 @@ import { RewardCategoryService } from './reward-category.service';
 import { RewardCategory } from '../../entities/reward-category.entity';
 import { CreateRewardCategoryDto } from './dto/crete-rewardCategory.dto';
 import { PaginationResultType } from 'src/types/pagination-result.type';
-import { customPagination } from 'src/utils/pagination';
-import { OkTransform, TOkResponse } from 'src/utils/ok-response';
+import { customPagination } from 'src/shared/utils/pagination';
+import { OkTransform, TOkResponse } from 'src/shared/utils/ok-response';
 import { NullableType } from 'src/types/nullable.type';
 import { ApiQuery } from '@nestjs/swagger';
 

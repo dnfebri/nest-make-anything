@@ -1,5 +1,5 @@
-import { IPaginationOptions } from '../types/pagination-options';
-import { PaginationResultType } from '../types/pagination-result.type';
+import { IPaginationOptions } from '../../types/pagination-options';
+import { PaginationResultType } from '../../types/pagination-result.type';
 
 export const customPagination = <T>(
   data: T[],

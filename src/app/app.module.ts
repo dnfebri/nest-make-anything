@@ -2,19 +2,18 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import appConfig from 'src/shared/config/app.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from 'src/database/typeorm-config.service';
 import { DataSource, DataSourceOptions } from 'typeorm';
-import databaseConfig from 'src/shared/config/database.config';
 import { AppPublicModule } from 'src/app-public/module';
 import { AppCommonModule } from 'src/app-common/module';
+import { AppsLoadConfig } from 'src/shared/config/apps-load.config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [appConfig, databaseConfig],
+      load: AppsLoadConfig,
       envFilePath: ['.env'],
     }),
     TypeOrmModule.forRootAsync({
